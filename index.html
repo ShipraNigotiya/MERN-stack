@@ -4,11 +4,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        :root{
+            --theme-color: #78576a;
+        }
+        
+        header{
+
+            background-image:url('https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg') ;
+           height: 70vh;
+           background-size: cover;
+           color: rgb(246, 249, 249);
+           text-align: center;
+           /* padding-top: 150px; */
+
+           box-sizing:border-box;
+           font-family: Roboto;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+          
+        }
+
+        .hero-title{
+            margin: 0;
+        }
+
+         body{
+
+            margin:0;
+         }
+
+         .section-feature{
+            text-align: center;
+            padding: 20px 100px;
+            font-family: Roboto;
+         }
+
+         .card-container{
+             display: flex;
+
+         }
+
+         .feature-card{
+                /* border: 2px solid red; */
+                text-align: center;
+                padding: 50px;
+                color: var(--theme-color);
+                 transition-duration:0.3s ;
+                 border-radius: 80px;
+    
+            }
+
+            .feature-card:hover{
+               background-color: var(--theme-color);
+               color: azure;
+           
+             }
+
+         .section-title{
+                 font-size: 40px;
+                 color: var(--theme-color);
+
+         }
+
+         .section-video{
+            padding: 50px 100px;
+         }
+
+         .section-video video{
+            width: 100%;
+         }
+
+         .section-title{
+            font-family:Roboto ;
+            text-align: center;
+         }
+
+         .text-input,.text-input-area{
+            width: 100% ;
+            margin-bottom: 30px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid gray;
+         }
+
+         .text-input-area{
+            resize: vertical;
+         }
+
+         .form-btn{
+            padding: 10px 20px;
+            background-color: var(--theme-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 30px;
+         }
+
+         footer{
+            background-color: var(--theme-color);
+            color: azure;
+            padding: 50px 100px;
+            font-family: Roboto;
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr ;
+
+         }
+
+         .Social-link{
+            color: azure;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+         }
+
+         
+
+    </style>
 </head>
 <body>
-   <h1>my page title</h1> 
-   <!-- <p>hii</p>
-   <p>hii</p> -->
-   <h4> this is heading</h4>
+
+   <header>
+        <h1 class="hero-title" style="text-align: center; font-size: 40px;">Welcome to my website</h1>  
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, doloribus?</p>
+        <!-- <button>learn more</button> -->
+       
+   </header>
+
+   <main>
+      <section class="section-feature">  
+           <h2 class="section-title">Our feature</h2>
+             
+        <div class="card-container">
+    
+            <div class="feature-card">
+                <i class="fa-3x fa-solid fa-rocket"></i> 
+                <!-- icon from font awesome -->
+                <h3>Card Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit perspiciatis rerum dolor libero deleniti expedita, neque quas iste voluptas, deserunt eius, aliquam nihil debitis hic!</p>
+
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-3x fa-solid fa-rocket"></i> 
+                <!-- icon from font awesome -->
+                <h3>Card Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit perspiciatis rerum dolor libero deleniti expedita, neque quas iste voluptas, deserunt eius, aliquam nihil debitis hic!</p>
+
+            </div>
+
+            <div class="feature-card">
+                <i class="fa-3x fa-solid fa-rocket"></i> 
+                <!-- icon from font awesome -->
+                <h3>Card Title</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit perspiciatis rerum dolor libero deleniti expedita, neque quas iste voluptas, deserunt eius, aliquam nihil debitis hic!</p>
+
+            </div>
+
+        </div>   
+
+    </section>
+        
+    <section class="section-video">
+        <h2 class="section-title"> Our Work</h2>
+              <!-- pexels site for video -->
+          <video src="landscape video.mp4" autoplay loop controls></video>
+    </section>
+
+        <section class="section-contact">
+        <h2 class="section-title"> Contact Us</h2>
+
+        <form >
+            <label >NAME</label>
+            <input type="text" class="text-input">
+
+            <label >Email</label>
+            <input type="text" class="text-input">
+            
+            <label>Contact Us</label>
+            <input type="text" class="text-input">
+
+            
+            <label>Message</label>
+            <textarea rows="5" class="text-input-area"></textarea>
+
+            <button class="form-btn">Submit</button>
+        </form>
+
+       </section>
+
+   </main>
+         <!-- omatsuri for developer  -->
+
+   <footer>
+         <div>
+            <h3>Website Name</h3>
+            <p> &copy; 2024 Website Name</p>
+
+         </div>
+         <div>
+         <h4> Visit Us at:</h4>
+         <a href="#" class="Social-link" > <i class="fa-brands fa-facebook"></i> Facebook</a>
+         <a href="#" class="Social-link"> <i class="fa-brands fa-instagram"></i> Instagram</a>
+         <a href="#" class="Social-link"> <i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+         <a href="#" class="Social-link"> <i class="fa-brands fa-github"></i> Github</a>
+        </div>
+
+        <div>
+            <h4> Visit Us at:</h4>
+            <a href="#" class="Social-link" > <i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="#" class="Social-link"> <i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="#" class="Social-link"> <i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#" class="Social-link"> <i class="fa-brands fa-github"></i> Github</a>
+        </div>
+
+   </footer>
 </body>
 </html>
