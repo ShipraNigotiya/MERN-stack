@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const model = require('../models/postModels');
 
 router.get('/add', (req,res) => {
-    res.send('add response from post router');
+    console.log(req.body);
+    new model(req.body).save()
 });
 
 router.get('/getall', (req,res) => {

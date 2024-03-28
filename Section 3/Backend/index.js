@@ -7,6 +7,9 @@ const app = express();
 const port = 5000;
 
 // middleware
+app.use(cors({
+    origin
+}))
 app.use('/post', postRouter );
 
 app.get('/', (req,res) => {
