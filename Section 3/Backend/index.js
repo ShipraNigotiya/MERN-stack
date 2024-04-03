@@ -1,6 +1,6 @@
 // import express
 const express = require('express');
-const postRouter = require('./routers/postRouter');
+const postRouter = require('./routers/postRouters');
 const cors = require('cors');
 
 // initialize express app
