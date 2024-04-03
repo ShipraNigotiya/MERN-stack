@@ -23,6 +23,10 @@ const Feed = () => {
     useEffect(() => {
         fetchPostData();
     }, [])
+
+    const deletePost = (id) => {
+        fetch('http://localhost:5000/post/delete'+id, {method: 'DELETE'} )
+    }
     
 
   return (
