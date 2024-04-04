@@ -1,6 +1,7 @@
 'use client';
 import { useFormik } from 'formik';
 import React from 'react'
+import toast from 'react-hot-toast';
 
 const UploadPost = () => {
 
@@ -23,13 +24,44 @@ const UploadPost = () => {
             })
             .then((response) => {
                 console.log(response.status);
+                toast.success('Post created successfully');
             }).catch((err) => {
                 console.log(err);
+                toast.error('Something went wrong');
             });
 
             console.log(values);
         }
     })
+
+    const uploadFile = (e) => {
+        
+        const file = e.target.files[0];
+        console.log(file);
+
+        const fd = new FormData();
+        fd.append('myfile', file);
+
+        fetch('http://localhost:5000/util/uploadfile', {
+            method: 'POST',
+            body: fd
+        })
+        .then((response) => {
+            if(response.status === 200){
+                toast.success('File Uploaded');
+                response.json()
+                .then((data) => {
+                    postForm.values.image = data.savedFile;
+                })
+
+            }else{
+                toast.error('Some Error Occured');
+            }
+        }).catch((err) => {
+            console.log(err);
+            toast.error('Some Error Occured');
+        });
+    }
 
     return (
         <div>
@@ -87,10 +119,8 @@ const UploadPost = () => {
                                     <div class="mb-3">
                                         <label for="" class="form-label">Image</label>
                                         <input
-                                            type="text"
-                                            id="image"
-                                            onChange={postForm.handleChange}
-                                            value={postForm.values.image}
+                                            type="file"
+                                            onChange={uploadFile}
                                             class="form-control"
                                             placeholder=""
                                         />

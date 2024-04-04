@@ -1,6 +1,7 @@
 // import express
 const express = require('express');
 const postRouter = require('./routers/postRouters');
+const utilRouter = require('./routers/utilRouter');
 const cors = require('cors');
 
 // initialize express app
@@ -14,6 +15,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use( '/post', postRouter );
+app.use( '/util', utilRouter );
 
 app.get('/', (req, res) => {
     res.send('response from express');
