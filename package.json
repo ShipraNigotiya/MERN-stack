@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "mailer": "^0.6.7",
+    "node": "^18.20.2"
+  }
+}
